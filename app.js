@@ -27,7 +27,7 @@ app.get('/viewAll',async (req,res)=>{
     res.render('products',{products :allProducts})
 })
 
-// delete product
+// delete the  product
 
 app.get('/delete/:productid',async (req,res)=>{
   const deletedProduct = await productModel.findOneAndDelete({_id:req.params.productid})
