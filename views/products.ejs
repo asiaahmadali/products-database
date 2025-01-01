@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div>
+       <div class="bg-zinc-800 min-h-screen text-white flex flex-col items-center justify-center  gap-2 pt-[20px]">
+             <h1 class="text-3xl">All Products</h1>
+             <a href="/" class="text-blue-500 border-b-blue-500 border-b-[1px]">Back to home</a>
+
+             <!-- all products -->
+             <div class="flex gap-4 flex-wrap">
+                  <%if(products.length>0){%>
+                        <%products.forEach((product)=>{%>
+                              <div class="flex flex-col gap-2 bg-zinc-600 p-[20px] rounded-md w-[260px]">
+                                    <img src="<%=product.productImage%>" alt="" class="w-full h-[150px]">
+                                    <h1 class="text-xl"><%=product.productName%></h1>
+                                    <p><%=product.productPrice%></p>
+                                       <div class="flex justify-between">
+                                             <a href="/edit/<%=product._id%>" class="text-green-400 cursor-pointer">Edit</a>
+                                             <a href="/delete/<%=product._id%>" class="text-red-400 cursor-pointer">Delete</a>
+                                       </div>
+                                </div>
+                        <%})%>
+                        
+                  <%}
+                  else{%>
+                    <h1 class="text-xl text-red-200">No Products yet</h1>
+                  <%}
+                  %>
+                   
+             </div>
+       </div>
+    </div>
+</body>
+</html>
