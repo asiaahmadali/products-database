@@ -21,7 +21,7 @@ app.post('/create',async(req,res)=>{
    res.redirect('/viewAll');
 })
 
-// read all products
+// read all the products
 app.get('/viewAll',async (req,res)=>{
     const allProducts = await productModel.find() ;
     res.render('products',{products :allProducts})
