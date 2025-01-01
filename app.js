@@ -10,7 +10,7 @@ app.get('/',(req,res)=>{
     res.render('index');
 })
 
-// create product
+// create the product
 app.post('/create',async(req,res)=>{
   const{Pname, Pprice, Pimage} = req.body ;
   const createdProduct = await productModel.create({
