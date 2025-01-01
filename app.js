@@ -34,7 +34,7 @@ app.get('/delete/:productid',async (req,res)=>{
   res.redirect('/viewAll') ;
 })
 
-// edit product
+// edit the  product
 
 app.get('/edit/:productid',async (req,res)=>{
   let updatedproduct = await productModel.findOne({_id:req.params.productid}) ;
